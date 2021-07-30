@@ -58,13 +58,21 @@ client.on("message", (message) => {
         case("link-solat-auto"):
             client.commands.get('link-solat-auto').execute(Discord, message, args);
             break;
+        case("absenin-wajib"):
+            client.commands.get('absenin-wajib').execute(Discord, message, args);
+            break;
+        case("absenin-dhuha"):
+            client.commands.get('absenin-dhuha').execute(Discord, message, args);
+            break;
+        case("absenin-tahajud"):
+            client.commands.get('absenin-tahajud').execute(Discord, message, args);
+            break;
         case("help"):
             client.commands.get('help').execute(Discord, message, args);
             break;
         case("say"):
             client.commands.get('say').execute(message, args);
             break;
-
     }    
     
 })
