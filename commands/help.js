@@ -19,6 +19,8 @@ module.exports = {
             .addField('GitHub', 'Plz star my dev repo https://github.com/altf4m88/VeryUsefulBot', false)
             .setTimestamp()
             .setFooter('Semoga Berkah');
+
+            return message.channel.send(embed);
         }else if(args.length > 0){
             let commandName = args[0];
             try {
