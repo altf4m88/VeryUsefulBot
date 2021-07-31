@@ -50,6 +50,7 @@ module.exports = {
         .setColor('RANDOM')
         .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
         .setDescription('https://bit.ly/HasilSDC2122')
+        .addField('PENTING', `Dimohon untuk tidak SPAM karena akan menyebabkan downtime (yo maklum gw hosting gratisan, mau bayarin?). Yang terdeteksi spam akan otomatis di blacklist dari penggunaan command ini`, false)
         .setTimestamp()
         .setFooter(`Diminta oleh ${message.author.username}`);
         
