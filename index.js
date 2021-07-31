@@ -70,6 +70,9 @@ client.on("message", (message) => {
         case("help"):
             client.commands.get('help').execute(Discord, message, args);
             break;
+        case("bug-report"):
+            client.commands.get('bug-report').execute(client, Discord, message, args);
+            break;
         case("say"):
             client.commands.get('say').execute(message, args);
             break;
