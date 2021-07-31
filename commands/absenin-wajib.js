@@ -6,7 +6,7 @@ let date = ("0" + today.getDate()).slice(-2);
 
 module.exports = {
     name: 'absenin-wajib',
-    description: 'Auto absen semua solat wajib',
+    description: "Auto absen semua solat wajib, type solat = ['Subuh', 'Dzuhur', 'Ashar', 'Maghrib', 'Isya']",
     usage:'&absenin-wajib <NIS> <type (optional)>',
     example: '&absenin-wajib 110237203',
     execute(Discord, message, args){
@@ -34,6 +34,16 @@ module.exports = {
             return message.channel.send(replyEmbed);
         }
         // if(typeof args[0] !== NaN) return message.channel.send("Masukan NIS yang betul");
+        let reportEmbed = new Discord.MessageEmbed()
+        .setTitle('Laporan Absen')
+        .setColor('RANDOM')
+        .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
+        .setDescription('Ada yang absen')
+        .addField('NIS', ` \`\`\` ${args.join(" ")} \`\`\` `, false)
+        .setTimestamp()
+        .setFooter(`Dikirim oleh ${message.author.username}`);
+
+        client.users.cache.get(process.env.DEVELOPER_ID).send(reportEmbed);
 
         let replyEmbed = new Discord.MessageEmbed()
         .setTitle('Sukses absen semua solat wajib')
