@@ -30,7 +30,7 @@ client.once("ready", () => {
     console.log("Sup")
     client.user.setPresence({
         activity: {
-            name: "documentation coming soon",
+            name: "&help for documentation",
             type: "LISTENING"
         }
     })
