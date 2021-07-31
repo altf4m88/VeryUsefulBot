@@ -9,7 +9,7 @@ module.exports = {
     description: "Auto absen semua solat wajib, type solat = ['Subuh', 'Dzuhur', 'Ashar', 'Maghrib', 'Isya']",
     usage:'&absenin-wajib <NIS> <type (optional)>',
     example: '&absenin-wajib 110237203',
-    execute(Discord, message, args){
+    execute(client, Discord, message, args){
         if(args[0] == undefined) return message.channel.send("Masukan NIS nak");
         let nis = parseInt(args[0]);
         let type = ['Subuh', 'Dzuhur', 'Ashar', 'Maghrib', 'Isya'];
