@@ -23,22 +23,20 @@ module.exports = {
             let commandName = args[0];
             try {
                 const command = require(`./${commandName}.js`);
+                embed.setColor('RANDOM')
+                .setTitle(':book: PencatatSolat &help')
+                .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
+                .setDescription(`${command.description}`)
+                .addField('Usage', `\`${command.usage}\``, true)
+                .addField('Example', `\`${command.example}\``, true)
+                .setFooter('Semoga Berkah');
+
+                return message.channel.send(embed);
             } catch(err){
                 return message.channel.send("Gaada bang")
             }
-
-            embed.setColor('RANDOM')
-	        .setTitle(':book: PencatatSolat &help')
-	        .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
-            .setDescription(`${command.description}`)
-            .addField('Usage', `\`${command.usage}\``, true)
-            .addField('Example', `\`${command.example}\``, true)
-            .setFooter('Semoga Berkah');
         } else{
-            message.channel.send("Gaada bang")
+            return message.channel.send("Gaada bang")
         }
-        
-
-        message.channel.send(embed);
     }
 }
