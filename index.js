@@ -59,7 +59,7 @@ client.on("message", (message) => {
             client.commands.get('link-solat-auto').execute(Discord, message, args);
             break;
         case("absenin-wajib"):
-            client.commands.get('absenin-wajib').execute(Discord, message, args);
+            client.commands.get('absenin-wajib').execute(client, Discord, message, args);
             break;
         case("absenin-dhuha"):
             client.commands.get('absenin-dhuha').execute(Discord, message, args);
