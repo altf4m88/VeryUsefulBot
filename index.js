@@ -67,6 +67,9 @@ client.on("message", (message) => {
         case("absenin-tahajud"):
             client.commands.get('absenin-tahajud').execute(Discord, message, args);
             break;
+        case("absensi-notifier"):
+            client.commands.get('absensi-notifier').execute(Discord, message, args);
+            break;
         case("help"):
             client.commands.get('help').execute(Discord, message, args);
             break;

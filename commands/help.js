@@ -15,7 +15,7 @@ module.exports = {
             .addField('AUTO ABSEN', '`absenin-wajib`, `absenin-dhuha`, `absenin-tahajud`', false)
             .addField('LINK ABSEN', '`link-solat`, `link-solat-auto`', false)
             .addField('MISC', '`help`, `introduce`', false)
-            .addField('UTILITY', '`ping`, `bug-report`', false)
+            .addField('UTILITY', '`absensi-notifier`', '`ping`, `bug-report`', false)
             .addField('GitHub', 'Plz star my dev repo https://github.com/altf4m88/VeryUsefulBot', false)
             .setTimestamp()
             .setFooter('Semoga Berkah');
