@@ -6,7 +6,7 @@ module.exports = {
     usage:'&absensi-notifier <enable> <time (optional)>',
     example: '&absensi-notifier enable 20.30',
     execute(Discord, message, args){
-        // if(message.guild.id != process.env.GUILD_ID) return message.channel.send("Fitur ini hanya bisa dilakukan di server RPLMepo Fan Club");
+        if(message.guild.id != process.env.GUILD_ID) return message.channel.send("Fitur ini hanya bisa dilakukan di server RPLMepo Fan Club");
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("Fitur ini hanya bisa dilakukan oleh Administrator");
         if(args[0] == undefined || args[0] != 'enable') return message.channel.send("Masukan kondisi nak");
 
