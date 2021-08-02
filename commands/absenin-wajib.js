@@ -44,7 +44,7 @@ module.exports = {
                     .setColor('RANDOM')
                     .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
                     .setDescription(`https://bit.ly/HasilSDC2122\n\n${contentId}`)
-                    .addField(`${name} - ${hadistNo}`, '\u200b')
+                    .addField(`${name} - ${no}`, '\u200b')
                     .setTimestamp()
                     .setFooter(`Diminta oleh ${message.author.username}`);
 
@@ -61,7 +61,7 @@ module.exports = {
 
                     return message.channel.send(replyEmbed)
                 });
-            
+            return;
         }
         // if(typeof args[0] !== NaN) return message.channel.send("Masukan NIS yang betul");
         let reportEmbed = new Discord.MessageEmbed()
