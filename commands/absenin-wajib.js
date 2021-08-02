@@ -1,5 +1,6 @@
 const today = new Date;
 const fetch = require("node-fetch");
+const cooldown = new Set();
 let year = today.getFullYear();
 let month = ("0" + (today.getMonth() + 1)).slice(-2);
 let date = ("0" + today.getDate()).slice(-2);
@@ -10,6 +11,7 @@ module.exports = {
     usage:'&absenin-wajib <NIS> <type (optional)>',
     example: '&absenin-wajib 110237203',
     execute(client, Discord, message, args){
+        if (cooldown.has(message.author.id)) return message.channel.send(`${message.author}` + "Tunggu 1 menit untuk menggunakan command ini lagi!");
         if(args[0] == undefined) return message.channel.send("Masukan NIS nak");
         let nis = parseInt(args[0]);
         let type = ['Subuh', 'Dzuhur', 'Ashar', 'Maghrib', 'Isya'];
@@ -66,6 +68,11 @@ module.exports = {
                 );
             }, 10000 * i);
         }
+
+        cooldown.add(message.author.id);
+            setTimeout(() => {
+                cooldown.delete(message.author.id);
+            }, 60000);
     }
 
 }
