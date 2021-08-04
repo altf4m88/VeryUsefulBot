@@ -70,6 +70,9 @@ client.on("message", (message) => {
         case("absensi-notifier"):
             client.commands.get('absensi-notifier').execute(Discord, message, args);
             break;
+        case("random-hadist"):
+            client.commands.get('random-hadist').execute(Discord, message, args);
+            break;
         case("help"):
             client.commands.get('help').execute(Discord, message, args);
             break;

@@ -14,6 +14,7 @@ module.exports = {
 	        .setThumbnail('https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
             .addField('🕌  AUTO ABSEN', '`absenin-wajib`, `absenin-dhuha`, `absenin-tahajud`', false)
             .addField('🕋  LINK ABSEN', '`link-solat`, `link-solat-auto`', false)
+            .addField('📖 HADIST', '`random-hadist`', false)
             .addField('⌨️  MISC', '`help`, `introduce`', false)
             .addField('🧰  UTILITY', '`absensi-notifier`, `ping`, `bug-report`', false)
             .addField('⭐  GitHub', 'Plz star my dev repo https://github.com/altf4m88/VeryUsefulBot', false)
