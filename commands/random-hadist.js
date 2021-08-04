@@ -35,7 +35,6 @@ module.exports = {
                     let name = json['data']['name'];
                     let no = json['data']['contents']['number'];
                     let contentId = json['data']['contents']['id'];
-                    console.log(name, no, contentId);
             
                     let replyEmbed = new Discord.MessageEmbed()
                     .setTitle(`${name} - ${no}`)
