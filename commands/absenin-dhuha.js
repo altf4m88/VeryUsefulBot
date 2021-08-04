@@ -27,6 +27,8 @@ module.exports = {
             }
         );
 
+        let rawiIndex = Math.floor(Math.random() * 8);
+
         fetch(`https://api.hadith.sutanlab.id/books/${rawi.id[rawiIndex]}/${Math.floor(Math.random() * rawi.available[rawiIndex])}`)
             .then(response => response.json())
             .then(async json => {
