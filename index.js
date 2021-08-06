@@ -39,7 +39,7 @@ client.once("ready", () => {
     const url = `https://api.pray.zone/v2/times/today.json?city=Jakarta`;
     let time;
 
-    await fetch(url)
+    fetch(url)
     .then(response => response.json())
     .then(async json => {
         time = json.results.datetime[0].times;
@@ -76,9 +76,11 @@ client.once("ready", () => {
     
             crons[idx].start();
         });
+
+        console.log(`Successfully started absen notifier`);
     })
     .catch((error) => {
-        console.log(`An error occured while fetching API. Error: ` + error);
+        console.log(`An error occurred while trying to fetching API. Error: ` + error);
     });
 
 })
