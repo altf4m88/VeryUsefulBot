@@ -1,4 +1,5 @@
 const today = new Date;
+today.toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })
 const fetch = require("node-fetch");
 const rawi = {
     id: ["abu-daud", "ahmad", "bukhari", "darimi", "ibnu-majah", "malik", "muslim", "nasai", "tirmidzi"],
