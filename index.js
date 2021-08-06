@@ -1,8 +1,10 @@
 require('dotenv').config();
 
+const { CronJob } = require('cron');
 const Discord = require("discord.js");
 const fs = require("fs");
 const http = require('http');
+const fetch = require("node-fetch");
 
 const server = http.createServer((req, res) => {
   res.writeHead(200);
@@ -25,7 +27,6 @@ for(const file of commandFiles){
 }
 
 
-
 client.once("ready", () => {
     console.log("Sup")
     client.user.setPresence({
@@ -34,6 +35,54 @@ client.once("ready", () => {
             type: "LISTENING"
         }
     })
+
+    const url = `https://api.pray.zone/v2/times/today.json?city=Jakarta`;
+    let time;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(async json => {
+        time = json.results.datetime[0].times;
+
+        const sholatNotifList = [
+            {
+                id: 'Fajr',
+                name: 'Shubuh',
+            },
+            {
+                id: 'Dhuhr',
+                name: 'Dzuhur',
+            },
+            {
+                id: 'Asr',
+                name: 'Ashar',
+            },
+            {
+                id: 'Maghrib',
+                name: 'Maghrib',
+            },
+            {
+                id: 'Isha',
+                name: 'Isya',
+            },
+        ]
+    
+        let crons = {};
+    
+        sholatNotifList.forEach((val, idx) => {
+            crons[idx] = new CronJob(`00 ${time[val.id].slice(3, 5)} ${time[val.id].slice(0, 2)} * * *`, () => {
+                client.channels.cache.get(process.env.CHANNEL_ID).send(`<@&${process.env.ROLE_ID}>` + ` Jangan lupa absensi sholat ${val.name} hari ini!`);
+            }, null, true, 'Asia/Jakarta');
+    
+            crons[idx].start();
+        });
+
+        console.log(`Successfully started absen notifier`);
+    })
+    .catch((error) => {
+        console.log(`An error occurred while trying to fetching API. Error: ` + error);
+    });
+
 })
 
 
