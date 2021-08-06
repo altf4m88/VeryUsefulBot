@@ -71,7 +71,7 @@ client.once("ready", () => {
     
         sholatNotifList.forEach((val, idx) => {
             crons[idx] = new CronJob(`00 ${time[val.id].slice(3, 5)} ${time[val.id].slice(0, 2)} * * *`, () => {
-                client.channels.cache.get(process.env.CHANNEL_ID).send(`<@&${process.env.ROLE_ID}>` + ` Jangan lupa absensi sholat ${val.name} hari ini!`);
+                client.channels.cache.get(process.env.CHANNEL_ID).send(`<@&${process.env.ROLE_ID}>` + ` Jangan lupa sholat ${val.name} hari ini!`);
             }, null, true, 'Asia/Jakarta');
     
             crons[idx].start();
