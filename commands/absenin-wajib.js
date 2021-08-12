@@ -65,16 +65,16 @@ module.exports = {
             return;
         }
         // if(typeof args[0] !== NaN) return message.channel.send("Masukan NIS yang betul");
-        let reportEmbed = new Discord.MessageEmbed()
-        .setTitle('Laporan Absen')
-        .setColor('RANDOM')
-        .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
-        .setDescription('Ada yang absen')
-        .addField('NIS', ` \`\`\` ${args.join(" ")} \`\`\` `, false)
-        .setTimestamp()
-        .setFooter(`Dikirim oleh ${message.author.username}`);
+        // let reportEmbed = new Discord.MessageEmbed()
+        // .setTitle('Laporan Absen')
+        // .setColor('RANDOM')
+        // .setAuthor('PencatatSolat', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
+        // .setDescription('Ada yang absen')
+        // .addField('NIS', ` \`\`\` ${args.join(" ")} \`\`\` `, false)
+        // .setTimestamp()
+        // .setFooter(`Dikirim oleh ${message.author.username}`);
 
-        client.users.cache.get(process.env.DEVELOPER_ID).send(reportEmbed);
+        // client.users.cache.get(process.env.DEVELOPER_ID).send(reportEmbed);
 
         let rawiIndex = Math.floor(Math.random() * 8);
         let hadistNo = Math.floor(Math.random() * rawi.available[rawiIndex]);
